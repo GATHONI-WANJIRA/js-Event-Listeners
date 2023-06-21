@@ -44,6 +44,7 @@ grandparent.addEventListener('click', e => {
 
 parent.addEventListener('click', e => {
     console.log('parent capture');
+    e.stopPropagation();
 }, {capture:true});
 
 parent.addEventListener('click', e => {
@@ -65,3 +66,10 @@ document.addEventListener('click', e => {
 document.addEventListener('click', e => {
     console.log('document capture');
 } , {capture: true})
+
+// Events Propagation.
+//  Propagation refers to how events travel through the Document Object Model (DOM) tree. The DOM tree is the structure which contains parent/child/sibling elements in relation to each other. You can think of propagation as electricity running through a wire, until it reaches its destination.
+
+// Case scenario we want to stop the propagation at parent capture so we add .stopPropagation to the parent capture.
+
+// It will stop propagating at parent capture and will not enter child element.

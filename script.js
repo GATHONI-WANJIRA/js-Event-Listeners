@@ -6,3 +6,9 @@ const child = document.querySelector(".child")
 grandparent.addEventListener('click',e => {
     console.log(e.target);
 })
+
+// RUN EVENTS ONLY ONCE BY ADDING AN ATTRIBUTE AS SHOWN
+
+grandparent.addEventListener('click',e => {
+    console.log('grandparent');
+}, {once: true})
